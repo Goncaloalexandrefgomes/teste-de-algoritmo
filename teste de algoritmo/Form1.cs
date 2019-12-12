@@ -58,7 +58,7 @@ namespace teste_de_algoritmo
                 while (existe);
             }
             e1.Text = n[0].ToString();
-            
+            e2.Text = n[1].ToString();
         }
 
     }
