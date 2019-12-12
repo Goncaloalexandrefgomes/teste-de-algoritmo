@@ -19,21 +19,17 @@ namespace teste_de_algoritmo
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            int[] n = new int[5];
-
+            List<int> n = new List<int>();
+            Random rnd = new Random();
             for (int i = 0; i < 5; i++)
             {
-                bool existe;
-                do
-                {
-                    Random rnd = new Random();
-                    n[i] = rnd.Next(1, 51);
-                    existe = false;
-                    for (int j = 0; j < i; j++)
-                        if (n[i] == n[j]) existe = true;
-                }
-                while (existe);
+
+                int tmp;
+                do tmp = rnd.Next(1, 51);
+                while (n.Contains(tmp));
+                n.Add(tmp);
             }
+
             n1.Text = n[0].ToString();
             n2.Text = n[1].ToString();
             n3.Text = n[2].ToString();
@@ -42,23 +38,18 @@ namespace teste_de_algoritmo
 
 
 
-            int[] s = new int[2];
-
+            List<int> s = new List<int>();
             for (int i = 0; i < 2; i++)
             {
-                bool existe;
-                do
-                {
-                    Random rnd = new Random();
-                    n[i] = rnd.Next(1, 13);
-                    existe = false;
-                    for (int j = 0; j < i; j++)
-                        if (n[i] == n[j]) existe = true;
-                }
-                while (existe);
+
+                int tmp;
+                do tmp = rnd.Next(1, 13);
+                while (s.Contains(tmp));
+                s.Add(tmp);
             }
-            e1.Text = n[0].ToString();
-            e2.Text = n[1].ToString();
+
+            e1.Text = s[0].ToString();
+            e2.Text = s[1].ToString();
         }
 
     }
